@@ -7,7 +7,7 @@ var Slideshow = (function (){
 	var btnLeft = $("#btnLeft");
 	var btnRight = $("#btnRight");
 	var offset = "328px";
-	var timer;
+	var timer, timeout;
 	
 	function init() {
 		slidesList.each(function(i) {
@@ -21,12 +21,13 @@ var Slideshow = (function (){
 	function clickBtnLeftInit() {
 		btnLeft.on('click', function() {
 			window.clearInterval(timer);
+			window.clearTimeout(timeout);
 			if(index > 0) {
 				index--;
 				$(slidesList[index]).delay(250).animate({left: '0', opacity: 1}, 500);
 				$(slidesList[index +1]).animate({left: offset, opacity: 0}, 500);
 			} else {
-				index = 4;
+				index = slidesNumber - 1;
 				$(slidesList[index]).css('left', '-' + offset);
 				$(slidesList[index]).delay(250).animate({left: '0', opacity: 1}, 500);
 				$(slidesList[0]).animate({left: offset, opacity: 0}, 500, function() {
@@ -37,7 +38,7 @@ var Slideshow = (function (){
 					}
 				});
 			}
-			setTimeout(function(){ launchTimer(); },2000);
+			timeout = setTimeout(function(){ launchTimer(); },2000);
 			
 		});
 	}
@@ -46,8 +47,9 @@ var Slideshow = (function (){
 	function clickBtnRightInit() {
 		btnRight.on('click', function() {
 			window.clearInterval(timer);
+			window.clearTimeout(timeout);
 			rotateRight();
-			setTimeout(function(){ launchTimer(); },2000);
+			timeout = setTimeout(function(){ launchTimer(); },2000);
 			
 		});
 	}
