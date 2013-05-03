@@ -6,7 +6,7 @@ var Slideshow = (function (){
 	var index = 0;
 	var btnLeft = $("#btnLeft");
 	var btnRight = $("#btnRight");
-	var offset = "328px";
+	var offset = $('#slideshow').css('width');
 	var timer, timeout;
 	
 	function init() {
