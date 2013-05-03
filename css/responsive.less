@@ -1,0 +1,39 @@
+@import "variable.less";
+
+/* All devices except tablet */
+@media only screen and (max-width: 768px) {
+  header {
+    height: 100px;
+    line-height: 100px;
+  
+    .header_logo {
+      background-image: url('../img/Criteo_logo_blanc_small.png');
+      width: 210px;
+      height: 82px;
+    }
+  }
+  
+  #projectOverview {
+    height: 120px;
+    line-height: 120px;
+  }
+  
+  #projectDetails {
+    display: block;
+    
+      .projectType { 
+        width: 100%;
+        display: block;
+        border-left: none;
+        border-bottom: 1px solid @border;
+      }
+      
+      h1 {
+        margin: 10px;
+      }
+      
+      h2 {
+        margin: 0;
+      }
+  }
+}

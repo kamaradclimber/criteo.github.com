@@ -90,13 +90,7 @@ var Slideshow = (function (){
 
 $(document).ready(function() {
 	Slideshow.launch();
-	
-	//fix projectDetails height;
-	var height = 0;
-	$('.projectType').each(function() {
-		if(this.offsetHeight > height)
-			height = this.offsetHeight;
-	});
-	$('#projectDetails').css('height', height + 10 + 'px');
-	
+		
 });
+
+

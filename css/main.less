@@ -1,11 +1,6 @@
 @import "normalize.less";
+@import "variable.less";
 
-@orange: #FF8700;
-@light_orange: #F4AB58;
-@black: #343434;
-@border: #dddddd;
-@light_gray: #F4F4F4;
-@gray: #BBBBBB;
 
 nav {
 	height: 37px;
@@ -44,11 +39,17 @@ header {
 	position: relative;
 	margin-top: 30px;
 	.gradientVertical(@light_orange, @orange);
+	height: 380px;
 	line-height: 380px;
 	text-align: center;
 	
-	img {
+	.header_logo {
+		width: 630px;
+		height: 246px;
 		vertical-align: middle;
+		background: url('../img/Criteo_logo_blanc.png') no-repeat 0 0;
+		margin: 0 auto;
+		display: inline-block;
 	}
 }
 
@@ -164,14 +165,17 @@ header {
 
 #projectDetails {
 	font-size: 0;
+	display: table;
+	width: 100%;
 	
 	.projectType {
 		width: 33%;
 		font-size: 13px;
-		display: inline-block;
+		display: table-cell;
 		vertical-align: top;
 		border-left: 1px solid @border;
 		height: 100%;
+		padding-bottom: 10px;
 	}
 	
 	h1 {
